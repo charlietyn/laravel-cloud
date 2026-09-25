@@ -1,0 +1,60 @@
+{
+  "name": "ronu/laravel-cloud",
+  "description": "Cloud contracts and AWS adapters for Laravel 13 / PHP 8.5, designed for Floci in development and AWS in production.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "aws",
+    "floci",
+    "s3",
+    "sqs",
+    "sns",
+    "eventbridge",
+    "dynamodb",
+    "lambda",
+    "hexagonal-architecture"
+  ],
+  "require": {
+    "php": "^8.5",
+    "ext-json": "*",
+    "aws/aws-sdk-php": "^3.398",
+    "illuminate/console": "^13.32",
+    "illuminate/contracts": "^13.32",
+    "illuminate/filesystem": "^13.32",
+    "illuminate/support": "^13.32",
+    "league/flysystem-aws-s3-v3": "^3.35"
+  },
+  "require-dev": {
+    "ext-zip": "*",
+    "laravel/pint": "^1.30.5",
+    "orchestra/testbench": "^11.3",
+    "phpunit/phpunit": "^12.5.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ronu\\LaravelCloud\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ronu\\LaravelCloud\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ronu\\LaravelCloud\\Laravel\\CloudServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "test:unit": "phpunit --testsuite Unit",
+    "test:integration": "phpunit --testsuite Integration",
+    "test:contract": "phpunit --testsuite Contract",
+    "format": "pint"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

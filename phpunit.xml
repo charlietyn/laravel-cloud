@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.5/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache">
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Integration">
+            <directory>tests/Integration</directory>
+        </testsuite>
+        <testsuite name="Contract">
+            <directory>tests/Contract</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="APP_ENV" value="testing" force="true"/>
+        <env name="AWS_DEFAULT_REGION" value="eu-west-2" force="false"/>
+        <env name="AWS_ACCESS_KEY_ID" value="test" force="false"/>
+        <env name="AWS_SECRET_ACCESS_KEY" value="test" force="false"/>
+        <env name="AWS_ENDPOINT_URL" value="http://localhost.floci.io:4566" force="false"/>
+        <env name="AWS_USE_PATH_STYLE_ENDPOINT" value="true" force="false"/>
+    </php>
+</phpunit>

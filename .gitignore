@@ -1,0 +1,8 @@
+/vendor/
+/.phpunit.cache/
+/.idea/
+/.vscode/
+/.env
+/composer.lock
+*.zip
+/**/graphify-out/
